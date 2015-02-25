@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="trj_routing_control.event_listener.request" class="TRJ\RoutingControlBundle\EventListener\RequestListener">
+            <argument type="service" id="trj_routing_control.handler.request"/>
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+        </service>
+        <service id="trj_routing_control.handler.request" class="TRJ\RoutingControlBundle\Services\RequestHandler">
+            <argument type="service" id="trj_routing_control.configurator"/>
+        </service>
+        <service id="trj_routing_control.configurator" class="TRJ\RoutingControlBundle\Configurator\Configurator">
+            <argument>%kernel.root_dir%/config/routing_control.yml</argument>
+        </service>
+    </services>
+</container>

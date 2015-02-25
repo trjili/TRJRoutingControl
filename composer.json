@@ -1,0 +1,30 @@
+{
+    "name": "trjili/routing-control-bundle",
+    "description": "",
+    "homepage": "https://github.com/trjili/TRJRoutingControl",
+    "keywords": ["routing control", "routing availability"],
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "authors": [
+        {
+            "name": "Tarek Rjili",
+            "email": "tarek.rjili@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "TRJ\\RoutingControl\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
