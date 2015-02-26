@@ -1,0 +1,23 @@
+{% extends 'TRJRoutingControlBundle::layout.html.twig' %}
+ {% block content %}
+     <h1>Route list</h1>
+     {{ routes|length }}
+     <table class="table table-condensed">
+         <thead>
+            <tr>
+                <th>Path</th>
+                <th>Status</th>
+                <th>Visits</th>
+                <th>Controls</th>
+            </tr>
+         </thead>
+         {% for route in routes %}
+         <tr>
+                <td class="active">{{ route.path }}</td>
+                <td class="active">Enabled</td>
+                <td class="active">Visits</td>
+                <td class="active">Show control</td>
+         </tr>
+         {% endfor %}
+     </table>
+ {% endblock %}

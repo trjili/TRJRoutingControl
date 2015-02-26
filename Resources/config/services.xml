@@ -15,5 +15,8 @@
         <service id="trj_routing_control.configurator" class="TRJ\RoutingControlBundle\Configurator\Configurator">
             <argument>%kernel.root_dir%/config/routing_control.yml</argument>
         </service>
+        <service id="trj_routing_control.route.manager" class="TRJ\RoutingControlBundle\Manager\RouteManager">
+            <argument type="service" id="router"/>
+        </service>
     </services>
 </container>
