@@ -5,18 +5,17 @@
      <table class="table table-condensed">
          <thead>
             <tr>
-                <th>Path</th>
-                <th>Status</th>
-                <th>Visits</th>
+                <th>Name</th>
+                <th>Type</th>
                 <th>Controls</th>
             </tr>
          </thead>
-         {% for route in routes %}
+         {% for name, route in routes %}
          <tr>
+                <td class="active">{{ name }}</td>
                 <td class="active">{{ route.path }}</td>
-                <td class="active">Enabled</td>
-                <td class="active">Visits</td>
-                <td class="active">Show control</td>
+                <td class="active">file</td>
+                <td class="active"><a href="{{ path('trj_routing_control.control_show', {'name' : 'homepage'}) }}">Show</a></td>
          </tr>
          {% endfor %}
      </table>

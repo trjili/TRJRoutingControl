@@ -5,15 +5,16 @@
  * Date: 2/24/15
  * Time: 3:14 PM
  */
+namespace TRJ\RoutingControlBundle\Model;
 
-class RouteControl
+class RouteControl extends \ArrayObject
 {
 
     /** @var string */
-    private $routeName;
+    private $name;
 
     /** @var  string */
-    private $routeTargetName;
+    private $target;
 
     /** @var  DateTime */
     private $enabledFrom;
@@ -23,9 +24,6 @@ class RouteControl
 
     /** @var  bool */
     private $enabled;
-
-    /** @var  bool */
-    private $useRedirect;
 
     public function __construct() {}
 
@@ -80,33 +78,32 @@ class RouteControl
     /**
      * @return string
      */
-    public function getRouteName()
+    public function getName()
     {
-        return $this->routeName;
+        return $this->name;
     }
 
     /**
-     * @param string $routeName
+     * @param string $name
      */
-    public function setRouteName($routeName)
+    public function setName($name)
     {
-        $this->routeName = $routeName;
+        $this->name = $name;
     }
 
     /**
      * @return string
      */
-    public function getRouteTargetName()
+    public function getTarget()
     {
-        return $this->routeTargetName;
+        return $this->target;
     }
 
     /**
-     * @param string $routeTargetName
+     * @param string $target
      */
-    public function setRouteTargetName($routeTargetName)
+    public function setTarget($target)
     {
-        $this->routeTargetName = $routeTargetName;
+        $this->target = $target;
     }
-
 } 

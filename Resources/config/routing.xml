@@ -10,4 +10,10 @@
     <route id="trj_routing_control.route_list" pattern="/route/list">
         <default key="_controller">TRJRoutingControlBundle:Route:list</default>
     </route>
+    <route id="trj_routing_control.control_new" pattern="/route/control/{name}/new">
+        <default key="_controller">TRJRoutingControlBundle:Control:new</default>
+    </route>
+    <route id="trj_routing_control.control_show" pattern="/route/control/{name}/show">
+        <default key="_controller">TRJRoutingControlBundle:Control:show</default>
+    </route>
 </routes>

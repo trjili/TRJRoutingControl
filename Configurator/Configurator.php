@@ -62,7 +62,7 @@ class Configurator
      */
     public function render($expanded = 0)
     {
-        return Yaml::dump(array('routes' => $this->routes), $expanded);
+        return Yaml::dump(array('routing_control' => $this->routes), $expanded);
     }
     /**
      * Writes parameters to parameters.yml or temporary in the cache directory.
@@ -92,8 +92,8 @@ class Configurator
             throw new \InvalidArgumentException(sprintf('The %s file is not valid.', $filename));
         }
 
-        if (isset($ret['routes']) && is_array($ret['routes'])) {
-            return $ret['routes'];
+        if (isset($ret['routing_control']) && is_array($ret['routing_control'])) {
+            return $ret['routing_control'];
         } else {
             return array();
         }

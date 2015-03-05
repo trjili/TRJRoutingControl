@@ -17,6 +17,7 @@
         </service>
         <service id="trj_routing_control.route.manager" class="TRJ\RoutingControlBundle\Manager\RouteManager">
             <argument type="service" id="router"/>
+            <argument type="service" id="trj_routing_control.configurator"/>
         </service>
     </services>
 </container>

@@ -13,11 +13,27 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ControlController extends Controller
 {
+
+    /**
+     * @param $name
+     * @return Response
+     */
+    public function showAction($name)
+    {
+        /** @var RouteManager $routeManager */
+        $routeManager = $this->get('trj_routing_control.route.manager');
+        $routeControl = $routeManager->findRouteControl($name);
+
+        return $this->render('TRJRoutingControlBundle:Control:show.html.twig', array(
+            'routeControl' => $routeControl
+        ));
+    }
+
     /**
      * @param $name
      * @return RedirectResponse
      */
-    public function newAction($name)
+    public function createAction($name)
     {
         /** @var RouteManager $routeManager */
         $routeManager = $this->get('trj_routing_control.route.manager');
@@ -25,9 +41,9 @@ class ControlController extends Controller
         $routes = $routeManager->getRoutes();
         $route = $routes->get($name);
         $routeControl = new RouteControl();
-        $routeControl->setRouteName($route);
+        $routeControl->setName($route);
         $routeControl->setEnabled(true);
-        $routeControl->setRouteTargetName('target');
+        $routeControl->setTarget('target');
         $routeManager->createRouteControl($routeControl);
 
         return $this->redirect($this->generateUrl('trj_routing_control.route_list'));
